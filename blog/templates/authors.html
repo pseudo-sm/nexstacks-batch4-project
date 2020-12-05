@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog | Authors</title>
+</head>
+<body>
+{% include 'nav.html' %}
+{% for author in authors %}
+    <a href="{% url 'author_blogs' id=author.id %}">{{author.name}}</a><br>
+{% endfor %}
+</body>
+</html>

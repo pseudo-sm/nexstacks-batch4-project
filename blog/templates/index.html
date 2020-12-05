@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog | Travel Destinations</title>
+    {% load static %}
+</head>
+<body>
+{% include 'nav.html' %}
+<h5>Welcome, {{author}}</h5>
+{% for article in articles %}
+    <h1>{{article.title}}</h1><br>
+    <h6>Posted on : {{article.datetime}}</h6><br>
+    <img src="{% get_media_prefix %}{{article.image}}" height="400" width="600"><br>
+    <p>{{article.blog_content}}</p>
+    <h6> ~{{article.author__name}}</h6>
+    <hr>
+{% endfor %}
+</body>
+</html>
